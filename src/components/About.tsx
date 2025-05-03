@@ -32,6 +32,8 @@ export default function About() {
               <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                 <Image
                   src={myImg}
+                  width={256}
+                  height={256}
                   alt="Profile"
                   className="w-64 h-64 object-cover rounded-full border-4 border-background"
                 />

@@ -37,7 +37,7 @@ export default function TimelineItem({
       <Card className="overflow-hidden border border-border hover:border-primary/50 transition-colors duration-300">
         <CardContent className="p-6">
           <div className="flex flex-col md:flex-row md:items-start gap-4">
-            {icon && <div className="flex-shrink-0 rounded-full bg-primary/10 p-4 text-primary">{icon}</div>}
+            {icon && <div className="flex-shrink-0 rounded-full bg-primary/10 p-4 text-primary w-14">{icon}</div>}
             <div className="flex-grow">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <h3 className="text-xl font-bold">{title}</h3>
