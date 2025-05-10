@@ -1,0 +1,229 @@
+[
+    {
+      "id": 1,
+      "title": "Pedall - Cycle shop",
+      "description": "A full-featured Cycle shop with product listings, cart functionality, user authentication, and payment integration.",
+      "longDescription": "This e-commerce platform provides a comprehensive solution for online retail. It features a responsive product catalog with filtering and search capabilities, a shopping cart with persistent storage, user authentication and profile management, secure checkout with Stripe integration, and an admin dashboard for inventory management. The application is built with React for the frontend, Node.js and Express.js for the backend, and MongoDB for data storage. It implements best practices for security, performance, and user experience.",
+      "image": "/images/pedal-1.png",
+      "gallery": [
+        "/images/pedal-1.png",
+        "/images/pedal-2.png",
+        "/images/pedal-3.png",
+        "/images/pedal-4.png",
+        "/images/pedal-5.png",
+        "/images/pedal-6.png"
+      ],
+      "category": "fullstack",
+      "technologies": ["React", "Redux", "shurjoPay", "Node.js", "Express.js", "MongoDB", "tailwindcss", "mongoose", "ANT Design"],
+      "features": [
+        "Responsive product catalog with filtering and search",
+        "Shopping cart with persistent storage",
+        "User authentication and profile management",
+        "Secure checkout with Shurjo Pay integration",
+        "Admin dashboard for inventory management"
+      ],
+      "challenges": [
+        "Implementing secure payment processing",
+        "Optimizing database queries for performance",
+        "Building a responsive UI for all device sizes"
+      ],
+      "solutions": [
+        "Used Shurjo Pay secure API for payment processing",
+        "Implemented database indexing and query optimization",
+        "Utilized Tailwind CSS for responsive design"
+      ],
+      "liveUrl": "https://pedall.vercel.app",
+      "githubUrl": "https://github.com/DevAsFahim/pedall",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "MediMart - Online Pharmacy",
+      "description": "A modern e-commerce platform for purchasing medicines online, featuring secure authentication, prescription compliance, and order tracking.",
+      "longDescription": "MediMart is a comprehensive online pharmacy solution that allows users to browse, search, and purchase medicines with ease. The platform ensures prescription compliance for specific medications and provides a seamless shopping experience. It includes secure JWT-based authentication, role-based access control for customers and admins, and an intuitive admin dashboard for managing products, orders, and users. Built with Next.js and TypeScript for the frontend, and Node.js with Express for the backend, MediMart offers a robust and scalable architecture.",
+      "image": "/images/medimart-1.png",
+      "gallery": [
+        "/images/medimart-1.png",
+        "/images/medimart-2.png",
+        "/images/medimart-3.png",
+        "/images/medimart-4.png"
+      ],
+      "category": "fullstack",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "bcryptjs"],
+      "features": [
+        "User authentication with JWT and bcryptjs",
+        "Role-based access control (Customer/Admin)",
+        "Medicine catalog with search and filtering",
+        "Prescription upload for specific medicines",
+        "Secure checkout process",
+        "Order tracking and management",
+        "Admin dashboard for managing products, orders, and users"
+      ],
+      "challenges": [
+        "Implementing secure authentication and authorization",
+        "Ensuring prescription compliance for certain medicines",
+        "Designing a responsive and user-friendly interface"
+      ],
+      "solutions": [
+        "Utilized JWT for secure authentication and bcryptjs for password hashing",
+        "Integrated prescription upload feature with validation",
+        "Applied Tailwind CSS for responsive design across devices"
+      ],
+      "liveUrl": "https://medimart-rose.vercel.app",
+      "githubUrl": "https://github.com/jmjubaer/medimart-client",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Auto Plus - Car Resale Platform",
+      "description": "A car resale web application enabling users to list, browse, and purchase vehicles, with dedicated dashboards for buyers, sellers, and admins.",
+      "longDescription": "Auto Plus is a full-featured car resale platform that facilitates seamless interactions between buyers and sellers. Users can register, log in, and browse available vehicles. Sellers have access to a dashboard to add and manage their listings, while admins can oversee all users and listings. The application is built with React.js for the frontend and utilizes Firebase for authentication and hosting. Tailwind CSS ensures a responsive design, and React Router manages client-side routing.",
+      "image": "/images/autoplus-1.png",
+      "gallery": [
+        "/images/autoplus-1.png",
+        "/images/autoplus-2.png",
+        "/images/autoplus-3.png",
+        "/images/autoplus-4.png",
+        "/images/autoplus-5.png"
+      ],
+      "category": "fullstack",
+      "technologies": ["React.js", "Tailwind CSS", "Firebase Authentication", "Firebase Hosting", "React Router", "React Icons"],
+      "features": [
+        "User registration and login with Firebase Authentication",
+        "Seller dashboard to add and manage car listings",
+        "Admin dashboard to manage users and listings",
+        "Responsive design for various devices",
+        "Client-side routing with React Router",
+        "Integration of icons using React Icons"
+      ],
+      "challenges": [
+        "Managing different user roles and permissions",
+        "Ensuring real-time updates for listings",
+        "Designing intuitive dashboards for users"
+      ],
+      "solutions": [
+        "Implemented role-based access control within the application",
+        "Leveraged Firebase's real-time capabilities for dynamic data updates",
+        "Designed user-centric dashboards with clear navigation and functionality"
+      ],
+      "liveUrl": "https://auto-plus-fc1d8.web.app",
+      "githubUrl": "https://github.com/DevAsFahim/auto-plus-client",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "DevAsFahim Portfolio",
+      "description": "A personal portfolio website showcasing projects, skills, and contact information, built with Next.js and Tailwind CSS.",
+      "longDescription": "DevAsFahim Portfolio is a modern and responsive personal portfolio website designed to highlight professional projects, technical skills, and provide contact information. Built using Next.js and Tailwind CSS, the site ensures fast performance and a seamless user experience. It features a clean layout, interactive project showcases, and an integrated contact form powered by EmailJS for direct communication.",
+      "image": "/images/portfolio-1.png",
+      "gallery": [
+        "/images/portfolio-1.png",
+        "/images/portfolio-2.png",
+        "/images/portfolio-3.png",
+        "/images/portfolio-4.png",
+        "/images/portfolio-5.png",
+        "/images/portfolio-6.png"
+      ],
+      "category": "frontend",
+      "technologies": ["Next.js", "Tailwind CSS", "EmailJS", "React Icons", "TypeScript"],
+      "features": [
+        "Responsive design compatible with all devices",
+        "Project showcase with detailed descriptions",
+        "Integrated contact form using EmailJS",
+        "Dark and light mode toggle",
+        "Smooth scrolling and interactive UI elements"
+      ],
+      "challenges": [
+        "Implementing a fully responsive layout",
+        "Ensuring fast load times and performance",
+        "Integrating a reliable contact form without a backend"
+      ],
+      "solutions": [
+        "Utilized Tailwind CSS for responsive and utility-first styling",
+        "Optimized images and code splitting with Next.js",
+        "Integrated EmailJS for frontend-based email functionality"
+      ],
+      "liveUrl": "https://dev-as-fahim.web.app",
+      "githubUrl": "https://github.com/DevAsFahim/dev-as-fahim",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "Meta Zone - Service Portfolio Platform",
+      "description": "A service portfolio platform allowing users to add services, leave reviews, and manage personal feedback, built with React and Firebase.",
+      "longDescription": "Meta Zone is a dynamic service portfolio platform where users can explore various services, add their own offerings, and provide feedback through reviews. The application features user authentication, service management, and a review system. Built with React.js and styled using Tailwind CSS, it leverages Firebase for backend services, including authentication and real-time database functionalities.",
+      "image": "/images/metazone-1.png",
+      "gallery": [
+        "/images/metazone-1.png",
+        "/images/metazone-2.png",
+        "/images/metazone-3.png",
+        "/images/metazone-4.png",
+        "/images/metazone-5.png"
+      ],
+      "category": "fullstack",
+      "technologies": ["React.js", "Tailwind CSS", "Firebase", "React Router", "React Icons"],
+      "features": [
+        "User authentication and registration",
+        "Add and manage services",
+        "Leave and manage reviews",
+        "Responsive design for various devices",
+        "Real-time data updates with Firebase"
+      ],
+      "challenges": [
+        "Implementing real-time data synchronization",
+        "Managing user-generated content securely",
+        "Designing an intuitive user interface"
+      ],
+      "solutions": [
+        "Utilized Firebase's real-time database for live updates",
+        "Implemented authentication and validation for user inputs",
+        "Applied Tailwind CSS for a clean and responsive UI"
+      ],
+      "liveUrl": "https://meta-zone.web.app",
+      "githubUrl": "https://github.com/DevAsFahim/meta-zone-client",
+      "featured": true
+    },
+    {
+        "id": 6,
+        "title": "EAcademy - Online Learning Platform",
+        "description": "An online learning platform offering various courses, featuring user authentication, course details, and PDF generation.",
+        "longDescription": "EAcademy is a React.js-based online course platform that allows users to browse a variety of courses. The application incorporates React Router for navigation, Bootstrap for styling, and Firebase for authentication and data storage. Users can register or log in to access course details, and there's functionality to generate course information as PDFs using react-to-pdf.",
+        "image": "/images/eacademy-1.png",
+        "gallery": [
+          "/images/eacademy-1.png",
+          "/images/eacademy-2.png",
+          "/images/eacademy-3.png",
+          "/images/eacademy-4.png"
+        ],
+        "category": "fullstack",
+        "technologies": [
+          "React.js",
+          "Bootstrap",
+          "Firebase",
+          "React Router",
+          "react-to-pdf",
+          "react-icons"
+        ],
+        "features": [
+          "User registration and login with Firebase Authentication",
+          "Course catalog with detailed information",
+          "PDF generation of course details",
+          "Responsive design using Bootstrap",
+          "Navigation using React Router"
+        ],
+        "challenges": [
+          "Integrating PDF generation for course details",
+          "Managing user authentication securely",
+          "Ensuring responsive design across devices"
+        ],
+        "solutions": [
+          "Implemented react-to-pdf for generating course PDFs",
+          "Utilized Firebase Authentication for secure user management",
+          "Applied Bootstrap classes for responsive UI design"
+        ],
+        "liveUrl": "https://e-academy-e31d2.web.app/",
+        "githubUrl": "https://github.com/DevAsFahim/eacademy",
+        "featured": true
+    }
+      
+]  

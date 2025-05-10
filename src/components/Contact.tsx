@@ -55,7 +55,7 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             <p className="text-foreground/80 mb-8">
-              Feel free to reach out to me for any inquiries, project discussions, or just to say hello. I'm always open
+              Feel free to reach out to me for any inquiries, project discussions, or just to say hello. I am always open
               to new opportunities and collaborations.
             </p>
 
@@ -78,7 +78,7 @@ export default function Contact() {
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-foreground/60">Phone</h4>
+                    <h4 className="text-sm font-medium text-foreground/60">Phone & Whatsapp</h4>
                     <p className="text-foreground">+880 1708 713860</p>
                   </div>
                 </CardContent>

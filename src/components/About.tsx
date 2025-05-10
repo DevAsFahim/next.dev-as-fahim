@@ -65,7 +65,7 @@ export default function About() {
               user needs and business objectives.
             </p>
             <p className="text-foreground/80 mb-8">
-              When I'm not coding, I enjoy staying updated with the latest tech trends, contributing to open-source
+              When I am not coding, I enjoy staying updated with the latest tech trends, contributing to open-source
               projects, and sharing my knowledge through my blog.
             </p>
 

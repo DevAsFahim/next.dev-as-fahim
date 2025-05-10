@@ -1,128 +1,39 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ExternalLink, Github, ArrowRight } from "lucide-react"
-import Link from "next/link"
-
-const projectsData = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce platform with product listings, cart functionality, user authentication, and payment integration.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "fullstack",
-    technologies: ["React", "Node.js", "Next.js", "MongoDB", "Stripe"],
-    liveUrl: "https://example.com/ecommerce",
-    githubUrl: "https://github.com/yourusername/ecommerce",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, task assignments, and progress tracking.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "fullstack",
-    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-    liveUrl: "https://example.com/taskmanager",
-    githubUrl: "https://github.com/yourusername/taskmanager",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description: "A weather dashboard that displays current and forecasted weather data for multiple locations.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "frontend",
-    technologies: ["React", "OpenWeather API", "Chart.js"],
-    liveUrl: "https://example.com/weather",
-    githubUrl: "https://github.com/yourusername/weather",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Blog Platform",
-    description:
-      "A content management system for creating and managing blog posts with categories, tags, and user comments.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "fullstack",
-    technologies: ["Next.js", "MongoDB", "Tailwind CSS"],
-    liveUrl: "https://example.com/blog",
-    githubUrl: "https://github.com/yourusername/blog",
-    featured: true,
-  },
-  {
-    id: 5,
-    title: "Portfolio Website",
-    description: "A responsive portfolio website to showcase projects and skills.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "frontend",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://example.com/portfolio",
-    githubUrl: "https://github.com/yourusername/portfolio",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Recipe Finder",
-    description:
-      "An application that allows users to search for recipes based on ingredients, dietary restrictions, and meal types.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "frontend",
-    technologies: ["React", "Spoonacular API", "CSS"],
-    liveUrl: "https://example.com/recipes",
-    githubUrl: "https://github.com/yourusername/recipes",
-    featured: false,
-  },
-  {
-    id: 7,
-    title: "Chat Application",
-    description: "A real-time chat application with private messaging, group chats, and file sharing capabilities.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "fullstack",
-    technologies: ["React", "Socket.io", "Next.js", "MongoDB"],
-    liveUrl: "https://example.com/chat",
-    githubUrl: "https://github.com/yourusername/chat",
-    featured: true,
-  },
-  {
-    id: 8,
-    title: "Movie Database",
-    description: "A movie database application that displays information about movies, actors, and directors.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "frontend",
-    technologies: ["Vue.js", "TMDB API", "CSS"],
-    liveUrl: "https://example.com/movies",
-    githubUrl: "https://github.com/yourusername/movies",
-    featured: false,
-  },
-  {
-    id: 9,
-    title: "Fitness Tracker",
-    description: "A fitness tracking application that allows users to log workouts, track progress, and set goals.",
-    image: "/placeholder.svg?height=600&width=800",
-    category: "fullstack",
-    technologies: ["React", "Node.js", "Next.js", "MongoDB"],
-    liveUrl: "https://example.com/fitness",
-    githubUrl: "https://github.com/yourusername/fitness",
-    featured: false,
-  },
-]
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { IProjects } from "@/types/types";
+import Image from "next/image";
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("all")
+  const [projects, setProjects] = useState<IProjects[]>([]);
+  const [activeTab, setActiveTab] = useState("all");
+
+  useEffect(() => {
+    const fetchLocalData = async () => {
+      try {
+        const response = await fetch("/projects.json");
+        const data = await response.json();
+        setProjects(data);
+      } catch (err) {
+        console.log("Error fetching projects:", err);
+      }
+    };
+
+    fetchLocalData()
+  }, []);
 
   const filteredProjects =
     activeTab === "all"
-      ? projectsData
+      ? projects
       : activeTab === "featured"
-        ? projectsData.filter((project) => project.featured)
-        : projectsData.filter((project) => project.category === activeTab)
+      ? projects.filter((project) => project.featured)
+      : projects.filter((project) => project.category === activeTab);
 
   return (
     <section id="projects" className="py-16 md:py-24 relative">
@@ -137,7 +48,11 @@ export default function Projects() {
           My Projects
         </motion.h2>
 
-        <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
+        <Tabs
+          defaultValue="all"
+          className="w-full"
+          onValueChange={setActiveTab}
+        >
           <div className="flex justify-center mb-8">
             <TabsList className="bg-muted">
               <TabsTrigger value="all">All Projects</TabsTrigger>
@@ -159,15 +74,21 @@ export default function Projects() {
                 >
                   <Card className="overflow-hidden h-full flex flex-col project-card">
                     <div className="relative overflow-hidden aspect-video">
-                      <img
-                        src={project.image || "/placeholder.svg"}
+                      <Image
+                        width={400}
+                        height={300}
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       />
                     </div>
                     <CardContent className="p-6 flex-grow flex flex-col">
-                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-foreground/70 mb-4 flex-grow">{project.description}</p>
+                      <h3 className="text-xl font-bold mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-foreground/70 mb-4 flex-grow">
+                        {project.description}
+                      </p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.technologies.map((tech, techIndex) => (
                           <span
@@ -179,13 +100,23 @@ export default function Projects() {
                         ))}
                       </div>
                       <div className="flex justify-between items-center">
-                        <Button asChild variant="outline" size="sm" className="border-primary hover:bg-primary/10">
+                        <Button
+                          asChild
+                          variant="outline"
+                          size="sm"
+                          className="border-primary hover:bg-primary/10"
+                        >
                           <Link href={`/projects/${project.id}`}>
                             Details <ArrowRight className="ml-1 h-3 w-3" />
                           </Link>
                         </Button>
                         <div className="flex space-x-2">
-                          <Button asChild variant="ghost" size="icon" className="h-8 w-8">
+                          <Button
+                            asChild
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                          >
                             <a
                               href={project.githubUrl}
                               target="_blank"
@@ -195,8 +126,18 @@ export default function Projects() {
                               <Github className="h-4 w-4" />
                             </a>
                           </Button>
-                          <Button asChild variant="ghost" size="icon" className="h-8 w-8">
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
+                          <Button
+                            asChild
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                          >
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="Live Demo"
+                            >
                               <ExternalLink className="h-4 w-4" />
                             </a>
                           </Button>
@@ -211,7 +152,10 @@ export default function Projects() {
         </Tabs>
 
         <div className="mt-12 text-center">
-          <Button asChild className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
+          <Button
+            asChild
+            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+          >
             <Link href="/projects">
               View All Projects <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -219,5 +163,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }

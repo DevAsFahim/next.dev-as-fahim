@@ -114,7 +114,6 @@
   --sidebar-ring: oklch(0.541 0.281 293.009);
 }
 
-
 @layer base {
   * {
     @apply border-border;
@@ -124,9 +123,12 @@
   }
 }
 
-
 .stars {
-  background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+  background-image: radial-gradient(
+      2px 2px at 20px 30px,
+      #eee,
+      rgba(0, 0, 0, 0)
+    ),
     radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
     radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
     radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
@@ -166,6 +168,10 @@
   animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+.pulse-slow {
+  animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -181,6 +187,90 @@
   animation: fadeIn 0.8s ease-out forwards;
 }
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end) infinite alternate;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-animation::after {
+  content: "|";
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes float-animation {
+  0% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rotation, 0deg));
+  }
+  100% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+}
+
+.float-animation {
+  animation: float-animation 4s ease-in-out infinite;
+}
+
+.tech-icon-mongodb {
+  --rotation: 12deg;
+}
+
+.tech-icon-express {
+  --rotation: -6deg;
+}
+
+.tech-icon-react {
+  --rotation: 6deg;
+}
+
+.tech-icon-node {
+  --rotation: -12deg;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.code-line {
+  line-height: 1.5;
+}
+
 .section-container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
 }
@@ -191,7 +281,7 @@
 
 .section-title::after {
   content: "";
-  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-2;
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-2;
 }
 
 .timeline-item {
@@ -200,7 +290,7 @@
 
 .timeline-item::before {
   content: "";
-  @apply absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-primary;
+  @apply absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary;
 }
 
 .project-card {
@@ -211,3 +301,52 @@
   @apply px-3 py-1 rounded-full text-xs font-medium bg-muted text-foreground transition-all duration-300 hover:bg-primary/20;
 }
 
+/* New styles for enhanced skills section */
+.skill-progress-bar {
+  @apply w-full h-2 bg-muted rounded-full overflow-hidden;
+}
+
+.skill-progress-fill {
+  @apply h-full transition-all duration-1000;
+}
+
+.skill-card {
+  @apply overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 border border-border hover:border-primary/50;
+}
+
+/* Image slider styles */
+.slider-container {
+  @apply relative rounded-lg overflow-hidden;
+}
+
+.slider-navigation {
+  @apply absolute inset-0 flex items-center justify-between p-4;
+}
+
+.slider-nav-button {
+  @apply h-10 w-10 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/70 flex items-center justify-center;
+}
+
+.slider-indicators {
+  @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2;
+}
+
+.slider-indicator {
+  @apply w-2 h-2 rounded-full transition-all bg-foreground/50;
+}
+
+.slider-indicator-active {
+  @apply bg-primary w-4;
+}
+
+.slider-thumbnails {
+  @apply mt-4 flex space-x-2 overflow-x-auto pb-2;
+}
+
+.slider-thumbnail {
+  @apply flex-shrink-0 w-20 h-20 rounded-md overflow-hidden transition-all opacity-70 hover:opacity-100;
+}
+
+.slider-thumbnail-active {
+  @apply ring-2 ring-primary opacity-100;
+}
